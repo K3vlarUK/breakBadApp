@@ -4,6 +4,7 @@
       <h1>The Breaking Bad Compendium</h1>
     </div>
     <div class="random-quote">
+      <h4>Your random quote:</h4>
       <random-quote :randomQuote="randomQuote"></random-quote>
     </div>
     <br>
@@ -46,7 +47,6 @@ export default {
       selectedEpisode: null,
       characters: [],
       selectedCharacter: null,
-      quotes: [],
       randomQuote: {}
     }
   },
@@ -58,10 +58,6 @@ export default {
     fetch('https://www.breakingbadapi.com/api/characters')
     .then(res2 => res2.json())
     .then(characters => this.characters = characters)
-
-    fetch('https://breakingbadapi.com/api/quotes')
-    .then(res3 => res3.json())
-    .then(quotes => this.quotes = quotes)
 
     fetch('https://breakingbadapi.com/api/quote/random')
     .then(res4 => res4.json())
@@ -86,12 +82,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.data {
+  font-family: helvetica;
+}
+
 .header {
   background: url('https://coverfiles.alphacoders.com/753/75395.jpg') 100% 100% no-repeat;
-  padding: 5rem 5rem;
-  margin-left: -8rem;
+  padding: 4rem 4rem;
+  margin-left: -7rem;
+  margin-top: -1rem;
   width: 100vmax;
-  height: 15vmax;
+  height: 17vmax;
   border-bottom: 3px solid white;
 }
 
@@ -101,7 +102,15 @@ export default {
   font-family: helvetica;
   color: lightgrey;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: lawnGreen;
+  -webkit-text-stroke-color: lightcyan;
+}
+
+.random-quote h4 {
+  text-align: center;
+  margin-bottom: -0.25rem;
+  color: lightgrey;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: lightcyan;
 }
 
 .data-container {
@@ -114,11 +123,17 @@ export default {
   border: 2px solid black;
   border-radius: 20px;
   padding: 0 10rem 2rem;
+  background-color: darkcyan;
+  color: lightcyan;
+  text-align: center;
 }
 
 .character-container {
   border: 2px solid black;
   border-radius: 20px;
   padding: 0 10rem 2rem;
+  background-color: darkcyan;
+  color: lightcyan;
+  text-align: center;
 }
 </style>

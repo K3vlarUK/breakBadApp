@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="episode">
     <select @change="selectEpisode" v-model="episode">
       <option disabled value="">Select an Episode</option>
       <option v-for="episode in episodes" :value="episode">

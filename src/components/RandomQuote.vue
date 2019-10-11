@@ -23,5 +23,7 @@ sub {
   padding: 0.4rem;
   border: 1px dotted black;
   border-radius: 25px;
+  background-color: antiquewhite;
+  color: darkslategrey;
 }
 </style>
